@@ -25,10 +25,10 @@ class GlideImage
      */
     protected $modificationParameters = [];
 
-    public static function create(string $sourceFile, $storageKey = 'local') : GlideImage
+    public static function create(string $sourceFile) : GlideImage
     {
         return (new static())
-        ->setStorage($storageKey)
+        ->setStorage(config('laravel-glide.sourceStorage'))
         ->setSourceFile($sourceFile);
     }
 

@@ -62,7 +62,13 @@ return [
      * The driver that will be used to create images. Can be set to gd or imagick.
      */
     'driver' => 'gd',
+
+    /*
+     * Storage key that will be used for source file
+     */
+    'sourceStorage' => 'local',
 ];
+
 
 ```
 ## Usage 
@@ -73,14 +79,6 @@ Here's a quick example that shows how an image can be modified:
 GlideImage::create($pathToImage)
 	->modify(['w'=> 50, 'filt'=>'greyscale'])
 	->save($pathToWhereToSaveTheManipulatedImage);
-```
-
-Here's how to use s3 storage using the key provided from config/filesystem.php
-
-```php
-GlideImage::create($pathToImage, 's3')
-    ->modify(['w'=> 50, 'filt'=>'greyscale'])
-    ->save($pathToWhereToSaveTheManipulatedImage);
 ```
 
 Take a look at [Glide's image API](http://glide.thephpleague.com/1.0/api/quick-reference/) to see which parameters you can pass to the `modify`-method.
