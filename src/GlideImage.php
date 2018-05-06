@@ -28,11 +28,11 @@ class GlideImage
     public static function create(string $sourceFile) : GlideImage
     {
         return (new static())
-        ->setStorage(config('laravel-glide.sourceStorage'))
+        ->setSourceStorage(config('laravel-glide.source_storage'))
         ->setSourceFile($sourceFile);
     }
 
-    public function setStorage(string $storageKey = 'local') : GlideImage
+    public function setSourceStorage(string $storageKey = 'local') : GlideImage
     {
         $this->storage = Storage::disk($storageKey);
 

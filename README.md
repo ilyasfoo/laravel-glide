@@ -64,9 +64,10 @@ return [
     'driver' => 'gd',
 
     /*
-     * Storage key that will be used for source file
+     * Storage key that will be used for source file according to filesystem config. 
+     * Your laravel default should have local, public, and s3.
      */
-    'sourceStorage' => 'local',
+    'source_storage' => 'local',
 ];
 
 
