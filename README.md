@@ -75,6 +75,14 @@ GlideImage::create($pathToImage)
 	->save($pathToWhereToSaveTheManipulatedImage);
 ```
 
+Here's how to use s3 storage using the key provided from config/filesystem.php
+
+```php
+GlideImage::create($pathToImage, 's3')
+    ->modify(['w'=> 50, 'filt'=>'greyscale'])
+    ->save($pathToWhereToSaveTheManipulatedImage);
+```
+
 Take a look at [Glide's image API](http://glide.thephpleague.com/1.0/api/quick-reference/) to see which parameters you can pass to the `modify`-method.
 
 ## Testing
